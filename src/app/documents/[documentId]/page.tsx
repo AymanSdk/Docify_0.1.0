@@ -3,8 +3,8 @@ interface DocumentIdPageProps {
 }
 
 const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
-  const awaitedParams = await params;
-  const documentId = awaitedParams.documentId;
+  const { documentId } = await params;
+
   return <div>Document Id {documentId}</div>;
 };
 
