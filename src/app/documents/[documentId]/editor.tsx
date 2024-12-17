@@ -20,6 +20,8 @@ import Image from "@tiptap/extension-image";
 import TextStyle from "@tiptap/extension-text-style";
 import Link from "@tiptap/extension-link";
 
+import { FontSizeExtension } from "@/extensions/font-size";
+
 import { useEditorStore } from "@/store/use-editor-store";
 
 export const Editor = () => {
@@ -59,6 +61,7 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      FontSizeExtension,
       Link.configure({
         openOnClick: false,
         autolink: true,
