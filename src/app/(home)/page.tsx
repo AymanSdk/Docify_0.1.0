@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Navbar } from "./navbar";
 import { TemplateGallery } from "./Template-gallery";
 
