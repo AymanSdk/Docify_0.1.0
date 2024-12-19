@@ -1,5 +1,8 @@
 "use client";
 
+// LiveBlocks TipTap integration
+import { useLiveblocksExtension } from "@liveblocks/react-tiptap";
+
 import ImageResize from "tiptap-extension-resize-image";
 
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -27,6 +30,7 @@ import { useEditorStore } from "@/store/use-editor-store";
 import { Ruler } from "./ruler";
 
 export const Editor = () => {
+  const liveblocks = useLiveblocksExtension();
   const { setEditor } = useEditorStore();
 
   const editor = useEditor({
@@ -64,6 +68,7 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      liveblocks,
       LineHeightExtension.configure({
         types: ["heading", "paragraph"],
         defaultLineHeight: "normal",
