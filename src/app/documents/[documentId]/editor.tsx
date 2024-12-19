@@ -28,7 +28,6 @@ import { LineHeightExtension } from "@/extensions/line-height";
 
 import { useEditorStore } from "@/store/use-editor-store";
 import { Ruler } from "./ruler";
-import { Thread } from "@liveblocks/react-ui";
 import { Threads } from "./threads";
 
 export const Editor = () => {
