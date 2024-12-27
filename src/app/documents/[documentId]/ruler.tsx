@@ -4,7 +4,7 @@ import { FaCaretDown } from "react-icons/fa";
 const markers = Array.from({ length: 83 }, (_, i) => i);
 
 export const Ruler = () => {
-  const [letfMargin, setLeftMargin] = useState(56);
+  const [leftMargin, setLeftMargin] = useState(56);
   const [rightMargin, setRightMargin] = useState(56);
 
   const [isDraggingLeft, setIsDraggingLeft] = useState(false);
@@ -31,7 +31,7 @@ export const Ruler = () => {
           const newLeftPosition = Math.min(rawPosition, maxLeftPosition);
           setLeftMargin(newLeftPosition); // Make Collaborative
         } else if (isDraggingRight) {
-          const maxRightPosition = 816 - (letfMargin + 100);
+          const maxRightPosition = 816 - (leftMargin + 100);
           const newRightPosition = Math.max(816 - rawPosition, 0);
           const constrainedRightPosition = Math.min(
             newRightPosition,
@@ -51,7 +51,7 @@ export const Ruler = () => {
   const handleLeftDoubleClick = () => {
     setLeftMargin(56);
   };
-  const handleRighDoubleClick = () => {
+  const handleRightDoubleClick = () => {
     setRightMargin(56);
   };
 
@@ -65,7 +65,7 @@ export const Ruler = () => {
     >
       <div id="ruler-container" className="w-full h-full relative">
         <Marker
-          position={letfMargin}
+          position={leftMargin}
           isLeft={true}
           isDragging={isDraggingLeft}
           onMouseDown={handleLeftMouseDown}
@@ -76,7 +76,7 @@ export const Ruler = () => {
           isLeft={false}
           isDragging={isDraggingRight}
           onMouseDown={handleRightMouseDown}
-          onDoubleClick={handleRighDoubleClick}
+          onDoubleClick={handleRightDoubleClick}
         />
         <div className="absolute inset-x-0 bottom-0 h-full">
           <div className="relative h-full w-[816px]">

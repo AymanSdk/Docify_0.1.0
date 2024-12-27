@@ -89,7 +89,7 @@ const LineHeightButton = () => {
     </DropdownMenu>
   );
 };
-// Font Size Button to change font size
+//* Font Size Button to change font size
 const FontSizeButton = () => {
   const { editor } = useEditorStore();
 
@@ -176,7 +176,7 @@ const FontSizeButton = () => {
     </div>
   );
 };
-// List items to add to text
+//* List items to add to text
 const ListButton = () => {
   const { editor } = useEditorStore();
 
@@ -220,7 +220,7 @@ const ListButton = () => {
     </DropdownMenu>
   );
 };
-// Align Text functionallity
+//* Align Text functionality
 const AlignButton = () => {
   const { editor } = useEditorStore();
 
