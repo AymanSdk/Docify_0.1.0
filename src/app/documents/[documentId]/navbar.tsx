@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+
 import { DocumentInput } from "./document-input";
+import { Avatars } from "./avatars";
 
 import {
   Menubar,
@@ -261,6 +263,7 @@ export const Navbar = () => {
         </div>
       </div>
       <div className="flex gap-3 items-center pl-6">
+        <Avatars />
         <OrganizationSwitcher
           afterCreateOrganizationUrl="/"
           afterLeaveOrganizationUrl="/"
