@@ -1,11 +1,19 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useStorage, useMutation } from "@liveblocks/react";
 import { FaCaretDown } from "react-icons/fa";
 
 const markers = Array.from({ length: 83 }, (_, i) => i);
 
 export const Ruler = () => {
-  const [leftMargin, setLeftMargin] = useState(56);
-  const [rightMargin, setRightMargin] = useState(56);
+  const leftMargin = useStorage((root) => root.leftMargin) ?? 56;
+  const setLeftMargin = useMutation(({ storage }, position: number) => {
+    storage.set("leftMargin", position);
+  }, []);
+
+  const rightMargin = useStorage((root) => root.rightMargin) ?? 56;
+  const setRightMargin = useMutation(({ storage }, position: number) => {
+    storage.set("rightMargin", position);
+  }, []);
 
   const [isDraggingLeft, setIsDraggingLeft] = useState(false);
   const [isDraggingRight, setIsDraggingRight] = useState(false);
@@ -29,7 +37,7 @@ export const Ruler = () => {
         if (isDraggingLeft) {
           const maxLeftPosition = 816 - rightMargin - 100;
           const newLeftPosition = Math.min(rawPosition, maxLeftPosition);
-          setLeftMargin(newLeftPosition); // Make Collaborative
+          setLeftMargin(newLeftPosition);
         } else if (isDraggingRight) {
           const maxRightPosition = 816 - (leftMargin + 100);
           const newRightPosition = Math.max(816 - rawPosition, 0);
@@ -135,14 +143,14 @@ const Marker = ({
       onMouseDown={onMouseDown}
       onDoubleClick={onDoubleClick}
     >
-      <FaCaretDown className="absolute left-1/2 top-0 h-full fill-blue-500 transform -translate-x-1/2" />
+      <FaCaretDown className="absolute left-1/2 top-0 h-full fill-[#FF7917] -translate-x-1/2" />
       <div
         className="absolute left-1/2 top-4 transform -translate-x-1/2"
         style={{
           height: "100vh",
           width: "1px",
           transform: "scaleX(0.5)",
-          backgroundColor: "#3b72f6",
+          backgroundColor: "#FF7917",
           display: isDragging ? "block" : "none",
         }}
       />
