@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
-import { type ColorResult, BlockPicker } from "react-color";
+import { type ColorResult, SketchPicker } from "react-color";
 import { type Level } from "@tiptap/extension-heading";
 
 import {
@@ -402,7 +402,7 @@ const TextHighlightColorButton = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-2.5">
         {/* TODO: change color picker here */}
-        <BlockPicker onChange={onChange} color={value} />
+        <SketchPicker onChange={onChange} color={value} />
       </DropdownMenuContent>
     </DropdownMenu>
   );
@@ -427,7 +427,7 @@ const TextColorButton = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-2.5">
         {/* TODO: change color picker here */}
-        <BlockPicker color={value} onChange={onChange} />
+        <SketchPicker color={value} onChange={onChange} />
       </DropdownMenuContent>
     </DropdownMenu>
   );
