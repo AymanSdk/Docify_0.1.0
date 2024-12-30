@@ -125,7 +125,7 @@ export const Navbar = ({ data }: NavbarProps) => {
     <nav className="flex items-center justify-between">
       <div className="flex gap-2 items-center">
         <Link href="/">
-          <Image src="/logo1.svg" alt="logo" width={36} height={36} />
+          <Image src="/docify_z-01.svg" alt="logo" width={88} height={88} />
         </Link>
         <div className="flex flex-col">
           <DocumentInput title={data.title} id={data._id} />
