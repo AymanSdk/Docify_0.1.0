@@ -6,6 +6,14 @@ Docify is a modern collaborative document editing application powered by the Tip
 
 ## Features 🔧
 
+### Home Page
+
+## ![Docify Screenshot](https://i.imgur.com/zpaxQVB.png)
+
+### Inside the Editor
+
+![Docify Screenshot](https://i.imgur.com/1pQu1Ma.jpeg)
+
 - **Real-Time Collaboration**: Work on documents together with Liveblocks, ensuring instant updates across all collaborators. ✨
 - **Organization Management**: Create organizations, invite users, and collaborate on documents within shared workspaces. 🔐
 - **Authentication**: Secure login and account management powered by Clerk. 🔑
@@ -18,16 +26,19 @@ Docify is a modern collaborative document editing application powered by the Tip
 ## Tech Stack 🎨
 
 ### **Frontend**
+
 - **Next.js 15**: The React-based framework for building fast, server-rendered web applications.
 - **React 19**: Provides the foundation for a robust, reactive UI.
 - **Tailwind CSS**: Utility-first CSS framework for rapid styling. 🎨
 - **Shadcn UI**: A component library for consistent and visually appealing designs.
 
 ### **Backend & Collaboration**
+
 - **Convex**: Serverless backend for data storage and API management. 🌐
 - **Liveblocks**: Real-time collaboration features, ensuring changes sync instantly. 🚀
 
 ### **Authentication**
+
 - **Clerk**: Streamlined authentication and user management services. 🔑
 
 ---
@@ -42,12 +53,14 @@ Docify is a modern collaborative document editing application powered by the Tip
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/docify.git
    cd docify
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install --legacy-peer-deps
    # or
@@ -56,6 +69,7 @@ Docify is a modern collaborative document editing application powered by the Tip
 
 3. Configure environment variables:
    Create a `.env.local` file in the root directory and add the required variables for Clerk, Convex, and Liveblocks:
+
    ```env
    NEXT_PUBLIC_CLERK_FRONTEND_API=your_clerk_frontend_api
    CLERK_API_KEY=your_clerk_api_key
@@ -64,11 +78,13 @@ Docify is a modern collaborative document editing application powered by the Tip
    ```
 
 4. Run the Convex development service:
+
    ```bash
    npx convex dev
    ```
 
 5. Run the development server:
+
    ```bash
    npm run dev
    # or
@@ -130,4 +146,3 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## Contact 📢
 
 If you have any questions or feedback, feel free to reach out at [ayman.sdk123@gmail.com](mailto:ayman.sdk123@gmail.com).
-
